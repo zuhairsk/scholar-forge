@@ -1,0 +1,449 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// ─── ENUMS ───────────────────────────────────────────────────
+
+enum Role {
+  AUTHOR
+  REVIEWER
+  ADMIN
+}
+
+enum PaperStatus {
+  DRAFT
+  SUBMITTED
+  MATCHED
+  UNDER_REVIEW
+  REVISION_REQUESTED
+  REVISED
+  PUBLISHED
+  REJECTED
+}
+
+enum ReviewRecommendation {
+  ACCEPT
+  MINOR_REVISION
+  MAJOR_REVISION
+  REJECT
+}
+
+enum NotificationType {
+  REVIEW_RECEIVED
+  REVIEW_MATCHED
+  XP_EARNED
+  LEVEL_UP
+  BADGE_UNLOCKED
+  REVIEWER_VERIFIED
+  TIP_RECEIVED
+  ADMIN_MESSAGE
+  REVISION_REQUESTED
+  PAYOUT_PROCESSED
+  PAPER_PUBLISHED
+}
+
+enum BadgeCategory {
+  MILESTONE
+  QUALITY
+  SPEED
+  STREAK
+  DOMAIN
+  SOCIAL
+  SPECIAL
+  RARE
+}
+
+enum BadgeRarity {
+  COMMON
+  UNCOMMON
+  RARE
+  EPIC
+  LEGENDARY
+}
+
+enum TipStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum VerificationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+// ─── MODELS ──────────────────────────────────────────────────
+
+model User {
+  id                String    @id @default(cuid())
+  email             String    @unique
+  emailVerified     DateTime?
+  name              String
+  password          String?
+  avatarUrl         String?
+  bio               String?
+  institution       String?
+  orcid             String?
+  website           String?
+  role              Role      @default(AUTHOR)
+  isVerified        Boolean   @default(false)
+  isSuspended       Boolean   @default(false)
+  suspendReason     String?
+
+  // Gamification
+  xp                Int       @default(0)
+  level             Int       @default(1)
+  streakDays        Int       @default(0)
+  lastReviewDate    DateTime?
+  totalReviews      Int       @default(0)
+  helpfulVotesTotal Int       @default(0)
+
+  // Stripe
+  stripeAccountId   String?
+  stripeCustomerId  String?
+
+  // Security
+  twoFactorEnabled  Boolean   @default(false)
+  twoFactorSecret   String?
+
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  // Relations
+  accounts          Account[]
+  sessions          Session[]
+  papers            Paper[]
+  reviews           Review[]
+  reviewerProfile   ReviewerProfile?
+  badges            UserBadge[]
+  notifications     Notification[]
+  xpLogs            XPLog[]
+  tipsReceived      Tip[]     @relation("TipReceiver")
+  tipsSent          Tip[]     @relation("TipSender")
+  coAuthorships     CoAuthor[]
+  reviewHighlights  Highlight[]
+  reviewVotes       ReviewVote[]
+
+  @@index([email])
+  @@index([role])
+  @@index([xp])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  @@unique([identifier, token])
+}
+
+model ReviewerProfile {
+  id                 String             @id @default(cuid())
+  userId             String             @unique
+  user               User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  degreeDocUrl       String
+  degreeType         String
+  position           String
+  institution        String
+  /// JSON string (SQLite dev): e.g. ["Computer Science","Biology"]
+  domains            String
+  /// JSON string (SQLite dev): e.g. { "Computer Science": 4, "Biology": 3 }
+  proficiency        String
+  isAvailable        Boolean            @default(true)
+  maxActiveReviews   Int                @default(3)
+  verificationStatus VerificationStatus @default(PENDING)
+  verifiedAt         DateTime?
+  verifiedBy         String?
+  rejectionNote      String?
+  bio                String?
+  linkedinUrl        String?
+  totalEarnings      Int                @default(0) // in cents
+  /// JSON string (SQLite dev): [{ paperId, until }]
+  snoozedPapers      String             @default("[]")
+  /// JSON string (SQLite dev): [{ paperId, reason, at }]
+  passedPapers       String             @default("[]")
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+}
+
+model Paper {
+  id              String      @id @default(cuid())
+  authorId        String
+  author          User        @relation(fields: [authorId], references: [id])
+  title           String
+  abstract        String
+  fileUrl         String
+  fileName        String
+  fileSize        Int
+  domain          String
+  /// JSON string (SQLite dev): e.g. ["AI","NLP"]
+  tags            String
+  status          PaperStatus @default(DRAFT)
+  isFeatured      Boolean     @default(false)
+  isPublic        Boolean     @default(true)
+  viewCount       Int         @default(0)
+  downloadCount   Int         @default(0)
+  version         Int         @default(1)
+  parentPaperId   String?
+  parentPaper     Paper?      @relation("Revisions", fields: [parentPaperId], references: [id])
+  revisions       Paper[]     @relation("Revisions")
+
+  // AI extracted metadata
+  aiExtractedTitle    String?
+  aiExtractedAbstract String?
+  /// JSON string (SQLite dev): e.g. ["transformers","attention"]
+  aiSuggestedTags     String
+  estimatedReadTime   Int?    // in minutes
+
+  // Review preferences
+  preferredReviewers   Int     @default(2)
+  reviewTimeline       String  @default("standard") // standard|express|flexible
+  isAnonymous          Boolean @default(false)
+
+  // Moderation (Phase 4 admin)
+  isFlagged       Boolean   @default(false)
+  flagReason      String?
+  flaggedBy       String?
+  flagResolvedAt  DateTime?
+
+  coAuthors       CoAuthor[]
+  reviews         Review[]
+  highlights      Highlight[]
+  tips            Tip[]
+
+  submittedAt     DateTime?
+  publishedAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([authorId])
+  @@index([status])
+  @@index([domain])
+  @@index([createdAt])
+}
+
+model CoAuthor {
+  id        String   @id @default(cuid())
+  paperId   String
+  paper     Paper    @relation(fields: [paperId], references: [id], onDelete: Cascade)
+  email     String
+  name      String?
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  claimed   Boolean  @default(false)
+  claimedAt DateTime?
+  createdAt DateTime @default(now())
+  @@unique([paperId, email])
+}
+
+model Review {
+  id                    String               @id @default(cuid())
+  paperId               String
+  paper                 Paper                @relation(fields: [paperId], references: [id])
+  reviewerId            String
+  reviewer              User                 @relation(fields: [reviewerId], references: [id])
+
+  // Content
+  summary               String
+  strengths             String
+  weaknesses            String
+  privateNote           String?
+  publicComment         String?
+
+  // Scores (1-10)
+  clarityScore          Int
+  methodologyScore      Int
+  noveltyScore          Int
+  reproducibilityScore  Int
+  impactScore           Int
+  overallScore          Float                // auto-calculated average
+
+  recommendation        ReviewRecommendation
+  isAnonymous           Boolean              @default(false)
+  isPublic              Boolean              @default(true)
+
+  // Moderation
+  isFlagged             Boolean              @default(false)
+  flagReason            String?
+  flaggedBy             String?
+  flagResolvedAt        DateTime?
+
+  // Voting
+  helpfulVotes          Int                  @default(0)
+  unhelpfulVotes        Int                  @default(0)
+  votes                 ReviewVote[]
+
+  // Gamification
+  xpAwarded             Int                  @default(0)
+  isTopReview           Boolean              @default(false)
+
+  // Draft / Tracking
+  /// JSON string (SQLite dev)
+  draftData             String?
+  claimedAt             DateTime?
+  deadlineAt            DateTime?
+  submittedAt           DateTime?
+  reviewDurationMinutes Int?
+
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @updatedAt
+
+  highlights            Highlight[]
+  tips                  Tip[]
+
+  @@index([paperId])
+  @@index([reviewerId])
+  @@index([submittedAt])
+}
+
+model ReviewVote {
+  id        String   @id @default(cuid())
+  reviewId  String
+  review    Review   @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  voterId   String
+  voter     User     @relation(fields: [voterId], references: [id], onDelete: Cascade)
+  vote      String   // "helpful" | "unhelpful"
+  createdAt DateTime @default(now())
+  @@unique([reviewId, voterId])
+  @@index([voterId])
+}
+
+model Highlight {
+  id         String   @id @default(cuid())
+  paperId    String
+  paper      Paper    @relation(fields: [paperId], references: [id], onDelete: Cascade)
+  reviewId   String?
+  review     Review?  @relation(fields: [reviewId], references: [id])
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  pageNum    Int
+  text       String
+  note       String?
+  color      String   @default("gold")
+  /// JSON string (SQLite dev): { x, y, width, height }
+  position   String
+  createdAt  DateTime @default(now())
+}
+
+model Badge {
+  id          String        @id @default(cuid())
+  slug        String        @unique
+  name        String
+  description String
+  iconEmoji   String
+  lottieUrl   String?
+  category    BadgeCategory
+  rarity      BadgeRarity
+  xpReward    Int           @default(0)
+  /// JSON string (SQLite dev)
+  condition   String
+  isActive    Boolean       @default(true)
+  createdAt   DateTime      @default(now())
+  users       UserBadge[]
+}
+
+model UserBadge {
+  id        String   @id @default(cuid())
+  userId    String
+  badgeId   String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge     Badge    @relation(fields: [badgeId], references: [id])
+  awardedAt DateTime @default(now())
+  awardNote String?
+  @@unique([userId, badgeId])
+}
+
+model XPLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount    Int      // positive = earn, negative = deduct
+  reason    String
+  /// JSON string (SQLite dev)
+  metadata  String?
+  createdAt DateTime @default(now())
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      NotificationType
+  title     String
+  message   String
+  link      String?
+  /// JSON string (SQLite dev)
+  metadata  String?
+  isRead    Boolean          @default(false)
+  createdAt DateTime         @default(now())
+  @@index([userId, isRead])
+  @@index([createdAt])
+}
+
+model Tip {
+  id              String    @id @default(cuid())
+  senderId        String
+  receiverId      String
+  paperId         String?
+  reviewId        String?
+  sender          User      @relation("TipSender", fields: [senderId], references: [id])
+  receiver        User      @relation("TipReceiver", fields: [receiverId], references: [id])
+  paper           Paper?    @relation(fields: [paperId], references: [id])
+  review          Review?   @relation(fields: [reviewId], references: [id])
+  amountCents     Int
+  currency        String    @default("usd")
+  stripePaymentId String    @unique
+  status          TipStatus @default(PENDING)
+  message         String?
+  createdAt       DateTime  @default(now())
+  @@index([receiverId])
+  @@index([senderId])
+}
+
+model SystemSettings {
+  id                      String   @id @default("singleton")
+  reviewSLAHours          Int      @default(72)
+  expressReviewSLAHours   Int      @default(24)
+  defaultXPPerReview      Int      @default(50)
+  helpfulVoteXP           Int      @default(30)
+  dailyStreakXP           Int      @default(20)
+  topReviewXP             Int      @default(100)
+  monthlyTopReviewerXP    Int      @default(200)
+  monthlyRewardAmountCents Int     @default(10000)
+  maintenanceMode         Boolean  @default(false)
+  updatedAt               DateTime @updatedAt
+  updatedBy               String?
+}

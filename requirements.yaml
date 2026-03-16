@@ -1,0 +1,24 @@
+packages:
+  "framer-motion": "For page transitions, stagger animations, 3D card tilt, and gamification effects"
+  "recharts": "For radar charts, line charts, and bar charts in admin and paper detail views"
+  "three": "Base library for live 3D backgrounds"
+  "@types/three": "TypeScript definitions for Three.js"
+  "@react-three/fiber": "React wrapper for Three.js to build the cinematic backgrounds"
+  "@react-three/drei": "Helpful utilities and components for react-three-fiber"
+  "react-confetti": "For the level up modal celebration"
+  "react-dropzone": "For the paper submission drag-and-drop area"
+  "clsx": "For conditional class names"
+  "tailwind-merge": "For merging tailwind classes safely"
+  "lucide-react": "Icons"
+
+images:
+  - path: "artifacts/scholar-forge/public/images/laurel-wreath.png"
+    description: "A symmetrical, elegant gold laurel wreath illustration on a transparent background, thin lines, minimalist dark academia style"
+    aspect_ratio: "1:1"
+  - path: "artifacts/scholar-forge/public/images/auth-bg.png"
+    description: "Abstract dark academia background, ancient library mixed with subtle futuristic glowing geometric shapes, cinematic lighting, deep blacks and golds"
+    aspect_ratio: "16:9"
+
+notes:
+  - Application is completely frontend-driven with mock data.
+  - Three.js backgrounds are optimized for performance but may require WebGL support.
