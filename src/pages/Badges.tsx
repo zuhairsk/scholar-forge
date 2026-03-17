@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { AppLayout } from '@/components/layout/AppLayout';
 import { GlassCard, Heading, cn } from '@/components/ui/design-system';
 import { Lock } from 'lucide-react';
 
@@ -49,7 +48,7 @@ export default function Badges() {
   });
 
   return (
-    <AppLayout role="reviewer">
+    <>
       <div className="fixed inset-0 z-[-1] bg-[#0a0b0f]">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-purple-900/10" />
       </div>
@@ -164,6 +163,6 @@ export default function Badges() {
           </div>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

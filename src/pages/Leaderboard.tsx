@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { StarFieldBg } from '@/components/three/Backgrounds';
-import { AppLayout } from '@/components/layout/AppLayout';
 import { GlassCard, Heading, DomainChip, cn } from '@/components/ui/design-system';
 import { Crown, TrendingUp, TrendingDown, Minus, ArrowUp } from 'lucide-react';
 
@@ -76,7 +75,7 @@ export default function Leaderboard() {
   const [tab, setTab] = useState(0);
 
   return (
-    <AppLayout role="reviewer">
+    <>
       <StarFieldBg />
       <div className="max-w-5xl mx-auto px-6 py-10 space-y-12">
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
@@ -166,6 +165,6 @@ export default function Leaderboard() {
           </GlassCard>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

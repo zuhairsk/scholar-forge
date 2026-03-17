@@ -1,8 +1,7 @@
 {
   "/(auth)/register/page": "app/(auth)/register/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/(app)/paper/[id]/page": "app/(app)/paper/[id]/page.js",
-  "/(app)/dashboard/author/page": "app/(app)/dashboard/author/page.js",
-  "/(app)/dashboard/reviewer/page": "app/(app)/dashboard/reviewer/page.js",
-  "/(app)/explore/page": "app/(app)/explore/page.js"
+  "/page": "app/page.js",
+  "/(app)/dashboard/author/submit/page": "app/(app)/dashboard/author/submit/page.js",
+  "/(app)/explore/page": "app/(app)/explore/page.js",
+  "/(app)/dashboard/author/page": "app/(app)/dashboard/author/page.js"
 }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { AppLayout } from '@/components/layout/AppLayout';
 import { GlassCard, Heading, DomainChip, StatusBadge, cn } from '@/components/ui/design-system';
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer, Tooltip } from 'recharts';
 import { MOCK_PAPERS, MOCK_REVIEWS } from '@/lib/mockData';
@@ -108,7 +107,7 @@ export default function PaperDetail() {
   const tabs = ['Overview', `Reviews (${reviews.length})`, 'Related Papers'];
 
   return (
-    <AppLayout role="reviewer">
+    <>
       <div className="fixed inset-0 z-[-1] bg-[#0a0b0f]">
         <div className="absolute top-0 left-0 right-0 h-80 bg-gradient-to-b from-primary/8 to-transparent" />
       </div>
@@ -215,6 +214,6 @@ export default function PaperDetail() {
           </motion.div>
         )}
       </div>
-    </AppLayout>
+    </>
   );
 }

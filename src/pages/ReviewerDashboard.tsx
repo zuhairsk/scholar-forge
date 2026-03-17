@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AppLayout } from '@/components/layout/AppLayout';
 import { AuroraBg } from '@/components/three/Backgrounds';
 import { Heading, GlassCard, LevelBadge, XPBar, DomainChip, GoldButton } from '@/components/ui/design-system';
 import { useCurrentUser, usePapers } from '@/hooks/use-scholar-data';
@@ -14,7 +13,7 @@ export default function ReviewerDashboard() {
   if (!user) return null;
 
   return (
-    <AppLayout role="reviewer">
+    <>
       <AuroraBg />
       
       <div className="max-w-7xl mx-auto p-6 md:p-10 space-y-10">
@@ -170,6 +169,6 @@ export default function ReviewerDashboard() {
         </div>
 
       </div>
-    </AppLayout>
+    </>
   );
 }

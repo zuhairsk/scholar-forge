@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { AppLayout } from '@/components/layout/AppLayout';
 import { GlassCard, Heading, DomainChip, StatusBadge, cn } from '@/components/ui/design-system';
 import { ConstellationBg } from '@/components/three/Backgrounds';
 import { Search, X, SortAsc } from 'lucide-react';
@@ -32,7 +31,7 @@ export default function Explore() {
   };
 
   return (
-    <AppLayout role="reviewer">
+    <>
       <div className="fixed inset-0 z-[-1] pointer-events-none">
         <div className="absolute inset-0 bg-[#0a0b0f]" />
         <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-primary/5 to-transparent" />
@@ -126,6 +125,6 @@ export default function Explore() {
           </div>
         )}
       </div>
-    </AppLayout>
+    </>
   );
 }

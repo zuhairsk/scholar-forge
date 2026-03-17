@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AppLayout } from '@/components/layout/AppLayout';
 import { GlassCard, Heading, FloatingInput, GoldButton, cn } from '@/components/ui/design-system';
 import { useDropzone } from 'react-dropzone';
 import { Upload, Check, ChevronRight, ChevronLeft, X, Rocket } from 'lucide-react';
@@ -59,7 +58,7 @@ export default function Submit() {
   const prog = ((step - 1) / (steps - 1)) * 100;
 
   return (
-    <AppLayout role="author">
+    <>
       <div className="fixed inset-0 z-[-1] bg-[#0a0b0f]" />
 
       <div className="max-w-3xl mx-auto px-6 py-10 space-y-8">
@@ -224,6 +223,6 @@ export default function Submit() {
           )}
         </AnimatePresence>
       </div>
-    </AppLayout>
+    </>
   );
 }

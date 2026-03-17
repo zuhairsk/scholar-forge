@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { AppLayout } from '@/components/layout/AppLayout';
 import { GlassCard, Heading, StatusBadge, cn } from '@/components/ui/design-system';
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { Users, FileText, CheckCircle, Clock, DollarSign, Check, X, Eye } from 'lucide-react';
@@ -66,7 +65,7 @@ export default function Admin() {
   const [approvals, setApprovals] = useState<Record<number, 'approved' | 'rejected'>>({});
 
   return (
-    <AppLayout role="admin">
+    <>
       <div className="fixed inset-0 z-[-1] bg-[#0a0b0f]">
         <div className="absolute inset-0 bg-gradient-to-br from-teal-900/10 via-transparent to-transparent" />
       </div>
@@ -219,6 +218,6 @@ export default function Admin() {
           </div>
         </GlassCard>
       </div>
-    </AppLayout>
+    </>
   );
 }
