@@ -1,0 +1,1 @@
+{"version":1,"functions":{"/api/auth/[...nextauth]":{},"/dashboard/author":{},"/dashboard/reviewer/active/[id]":{},"/admin":{},"/dashboard/author/submit":{},"/dashboard/reviewer":{},"/dashboard/reviewer/badges":{},"/explore":{},"/leaderboard":{},"/paper/[id]":{},"/login":{},"/":{},"/register":{}}}

@@ -1,0 +1,417 @@
+
+> @workspace/scholar-forge@0.0.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.production, .env
+  - Experiments (use with caution):
+    · esmExternals
+
+   Creating an optimized production build ...
+ ⚠ Compiled with warnings
+
+./node_modules/@prisma/client/runtime/wasm-engine-edge.js
+A Node.js API is used (setImmediate at line: 12) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/@prisma/client/runtime/wasm-engine-edge.js
+./node_modules/.prisma/client/wasm.js
+./node_modules/.prisma/client/default.js
+./node_modules/@prisma/client/default.js
+./lib/prisma.ts
+./lib/auth.ts
+./src/lib/auth.ts
+
+./node_modules/bcryptjs/index.js
+A Node.js module is loaded ('crypto' at line 32) which is not supported in the Edge Runtime.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+
+Import trace for requested module:
+./node_modules/bcryptjs/index.js
+./lib/auth.ts
+./src/lib/auth.ts
+
+./node_modules/bcryptjs/index.js
+A Node.js API is used (setImmediate at line: 335) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/bcryptjs/index.js
+./lib/auth.ts
+./src/lib/auth.ts
+
+./node_modules/bcryptjs/index.js
+A Node.js API is used (setImmediate at line: 336) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/bcryptjs/index.js
+./lib/auth.ts
+./src/lib/auth.ts
+
+./node_modules/jose/dist/webapi/lib/deflate.js
+A Node.js API is used (CompressionStream at line: 10) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/jose/dist/webapi/lib/deflate.js
+./node_modules/jose/dist/webapi/jwe/flattened/encrypt.js
+./node_modules/jose/dist/webapi/index.js
+./node_modules/next-auth/node_modules/@auth/core/jwt.js
+./node_modules/next-auth/node_modules/@auth/core/lib/init.js
+./node_modules/next-auth/node_modules/@auth/core/lib/index.js
+./node_modules/next-auth/node_modules/@auth/core/index.js
+./node_modules/next-auth/index.js
+./lib/auth.ts
+./src/lib/auth.ts
+
+./node_modules/jose/dist/webapi/lib/deflate.js
+A Node.js API is used (DecompressionStream at line: 26) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/jose/dist/webapi/lib/deflate.js
+./node_modules/jose/dist/webapi/jwe/flattened/encrypt.js
+./node_modules/jose/dist/webapi/index.js
+./node_modules/next-auth/node_modules/@auth/core/jwt.js
+./node_modules/next-auth/node_modules/@auth/core/lib/init.js
+./node_modules/next-auth/node_modules/@auth/core/lib/index.js
+./node_modules/next-auth/node_modules/@auth/core/index.js
+./node_modules/next-auth/index.js
+./lib/auth.ts
+./src/lib/auth.ts
+
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+Redis not configured, using in-memory fallback
+Redis not configured, using in-memory fallback
+   Generating static pages (0/22) ...
+   Generating static pages (5/22) 
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640) {
+  digest: '3618356749'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/_not-found". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at s (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:88330)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98875
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98962
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:99165) {
+  digest: '2456824181'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/explore". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at s (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:88330)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98875
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98962
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:99165) {
+  digest: '2456824181'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/dashboard/author/submit". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at s (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:88330)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98875
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98962
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:99165) {
+  digest: '2456824181'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/leaderboard". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at s (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:88330)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98875
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98962
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:99165) {
+  digest: '2456824181'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/dashboard/reviewer/badges". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at s (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:88330)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98875
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98962
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:99165) {
+  digest: '2456824181'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/dashboard/author". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at s (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:88330)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98875
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98962
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:99165) {
+  digest: '2456824181'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/dashboard/reviewer". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+   Generating static pages (10/22) 
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at s (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:88330)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98875
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98962
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:99165) {
+  digest: '2456824181'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/register". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at s (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:88330)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98875
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98962
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:99165)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:549:9)
+    at process.processTimers (node:internal/timers:523:7) {
+  digest: '2405932691'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+   Generating static pages (16/22) 
+Redis not configured, using in-memory fallback
+Redis not configured, using in-memory fallback
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at s (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:88330)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98875
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:98962
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:99165) {
+  digest: '2456824181'
+}
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+
+Error occurred prerendering page "/login". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of undefined (reading 'call')
+    at Object.t [as require] (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\.next\server\webpack-runtime.js:1:143)
+    at require (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:17:18811)
+    at A (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94398)
+    at C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:96726
+    at B._fromJSON (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:97164)
+    at JSON.parse (<anonymous>)
+    at I (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94119)
+    at t (C:\Users\zuhai\Downloads\scholar-forge\artifacts\scholar-forge\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:100640)
+Could not find files for /_error in .next/build-manifest.json
+Could not find files for /_error in .next/build-manifest.json
+Could not find files for /_error in .next/build-manifest.json
+Could not find files for /_error in .next/build-manifest.json
+ ✓ Generating static pages (22/22)
+
+> Export encountered errors on following paths:
+	/(app)/dashboard/author/page: /dashboard/author
+	/(app)/dashboard/author/submit/page: /dashboard/author/submit
+	/(app)/dashboard/reviewer/badges/page: /dashboard/reviewer/badges
+	/(app)/dashboard/reviewer/page: /dashboard/reviewer
+	/(app)/explore/page: /explore
+	/(app)/leaderboard/page: /leaderboard
+	/(auth)/login/page: /login
+	/(auth)/register/page: /register
+	/_not-found/page: /_not-found
+	/page: /
